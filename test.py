@@ -50,7 +50,7 @@ if __name__ == '__main__':
         bert_lm.cuda()
         bert_lm.eval()
         bert_grammer = BertForSequenceClassification.from_pretrained('bert-base-uncased')
-        bert_grammer.load_state_dict(torch.load('BertForToeic'))
+        bert_grammer.load_state_dict(torch.load('checkpoint.pt'))
         bert_grammer.cuda()
         bert_grammer.eval()
 
