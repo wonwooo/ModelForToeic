@@ -81,9 +81,9 @@ We got 20744 training samples from 5186 questions and tried to train(finetune) B
 
 |  | Input(X)     | Output(Y) |
 | :-------------: | :-------------: |  :--------------: |
-|X<sub>1</sub>| The marketing seminar is being `held` from August 8th through the 11th at Rupp Convention Center. | Bert_grammer(X<sub>1</sub>) = [logit<sub>True</sub>(X<sub>1</sub>) , logit<sub>False</sub>(X<sub>1</sub>)]|
-|X<sub>2</sub>| The marketing seminar is being `holds` from August 8th through the 11th at Rupp Convention Center. |Bert(X<sub>2</sub>) = logit<sub>True</sub>(X<sub>2</sub>) , logit<sub>False</sub>(X<sub>2</sub>)]  |
-|X<sub>3</sub>| The marketing seminar is being `holding` from August 8th through the 11th at Rupp Convention Center. |    Bert(X<sub>3</sub>) = logit<sub>True</sub>(X<sub>3</sub>) , logit<sub>False</sub>(X<sub>3</sub>)]  |
-|X<sub>4</sub>| The marketing seminar is being `hold` from August 8th through the 11th at Rupp Convention Center. |    Bert(X<sub>4</sub>) = logit<sub>True</sub>(X<sub>4</sub>) , logit<sub>False</sub>(X<sub>4</sub>)]  |
+|X<sub>1</sub>| The marketing seminar is being `held` from August 8th through the 11th at Rupp Convention Center. | BertForSeqClassification(X<sub>1</sub>) = [logit<sub>True</sub>(X<sub>1</sub>) , logit<sub>False</sub>(X<sub>1</sub>)]|
+|X<sub>2</sub>| The marketing seminar is being `holds` from August 8th through the 11th at Rupp Convention Center. |BertForSeqClassification(X<sub>2</sub>) = logit<sub>True</sub>(X<sub>2</sub>) , logit<sub>False</sub>(X<sub>2</sub>)]|
+|X<sub>3</sub>| The marketing seminar is being `holding` from August 8th through the 11th at Rupp Convention Center. |    BertForSeqClassification(X<sub>3</sub>) = logit<sub>True</sub>(X<sub>3</sub>) , logit<sub>False</sub>(X<sub>3</sub>)] |
+|X<sub>4</sub>| The marketing seminar is being `hold` from August 8th through the 11th at Rupp Convention Center. |    BertForSeqClassification(X<sub>4</sub>) = logit<sub>True</sub>(X<sub>4</sub>) , logit<sub>False</sub>(X<sub>4</sub>)] |
 
 <p align="center"><img width="500" src="https://github.com/woopal/ModelForToeic/blob/master/eq1.PNG"/></p>
