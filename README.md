@@ -28,14 +28,14 @@ Question : The appointment will bring a great deal of [ ? ].
 We first measured the performance of the pretrained BERT using the transformer package provided by Huggingface. Here is an example of the problem we used for Test.
 ```json
 {
-    {'question': 'His allergy symptoms _ with the arrival of summer.',
+    '1' :{'question': 'His allergy symptoms _ with the arrival of summer.',
   'answer': 'worsen',
   '1': 'bad',
   '2': 'worse',
   '3': 'worst',
   '4': 'worsen'},
 
- {'question': 'He told us that some fans lined up outside of the box office to _ a ticket for the concert.',
+ '2 : {'question': 'He told us that some fans lined up outside of the box office to _ a ticket for the concert.',
   'answer': 'purchase',
   '1': 'achieve',
   '2': 'purchase',
