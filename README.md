@@ -1,5 +1,5 @@
 ### Only Pre-trained BERT : 83.8% 
-### After Finetuning BERT With grammer problems : 89%
+### After Finetuning BERT With grammer problems : 87.5%
 
 This project started by referring to the results of ~.
 This project was done to increase the correct answer rate for the TOEIC Part 5 blank question.
