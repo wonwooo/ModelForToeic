@@ -78,7 +78,16 @@ We got 20744 training samples from 5186 questions and tried to train(finetune) B
 
 ## 3. Solving Part5 problems with finedtuned bert_grammer model
 
-To solve Part5 questions with the finetuned Classifier model, we changed the question as below.
+To solve Part5 questions with the finetuned Classifier model, we should input each full sentence that blank is filled blank with 4 candidates in question. Our input sentence X and model's output is shown below.
+
+```
+Question : The marketing seminar is being [ ? ] from August 8th through the 11th at Rupp Convention Center.
+    a) held
+    b) holds
+    c) holding
+    d) hold
+``` 
+
 
 |  | Input(X)     | Output(Y) |
 | :-------------: | :-------------: |  :--------------: |
