@@ -27,12 +27,13 @@ Question : The appointment will bring a great deal of [ ? ].
 
 We first measured the performance of the pretrained BERT using the transformer package provided by Huggingface. Here is an example of the problem we used for Test.
 ```json
-{'question': 'His allergy symptoms _ with the arrival of summer.',
+{
+    {'question': 'His allergy symptoms _ with the arrival of summer.',
   'answer': 'worsen',
   '1': 'bad',
   '2': 'worse',
   '3': 'worst',
-  '4': 'worsen'}
+  '4': 'worsen'},
 
  {'question': 'He told us that some fans lined up outside of the box office to _ a ticket for the concert.',
   'answer': 'purchase',
@@ -40,6 +41,7 @@ We first measured the performance of the pretrained BERT using the transformer p
   '2': 'purchase',
   '3': 'replace',
   '4': 'support'}
+}
 ```
 As a result of the test, Pretrined BertForMaskedLM already showed a correct answer rate of 83.8%, and we tried Finetuning with 5185 training sets, but it was no different from Bert's original pretraining task, so there was no improvement in the correct answer rate for the TOEIC problem. The dataset we created for Finetuning the MaskedLM model is as follows.
 
