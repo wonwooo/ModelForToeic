@@ -26,7 +26,7 @@ Question : The appointment will bring a great deal of [ ? ].
 ## 1. Prerained BERT For Masked Language Model
 
 We first measured the performance of the pretrained BERT using the transformer package provided by Huggingface. Here is an example of the problem we used for Test.
-```json
+```
 {
     '1' :{'question': 'His allergy symptoms _ with the arrival of summer.',
   'answer': 'worsen',
