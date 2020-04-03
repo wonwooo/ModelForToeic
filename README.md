@@ -88,4 +88,4 @@ We got 20744 training samples from 5186 questions and tried to train(finetune) B
 
 Prediction = $$ Prediction = argmax_{i} $$
 
-<p align="center"><img width="500" src="https://github.com/woopal/ModelForToeic/edit/master/eq1" /></p>
+<p align="center"><img width="500" src="https://github.com/woopal/ModelForToeic/blob/master/eq1.PNG"/></p>
