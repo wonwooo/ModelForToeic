@@ -83,6 +83,7 @@ We got 20744 training samples from 5186 questions and tried to train(finetune) B
 | :-------------: | :-------------: |  :--------------: |
 |X<sub>1</sub>| The marketing seminar is being `held` from August 8th through the 11th at Rupp Convention Center. | Bert(X<sub>1</sub>) = [True<sub>X1</sub>, False<sub>X1</sub>]|
 |X<sub>2</sub>| The marketing seminar is being `holds` from August 8th through the 11th at Rupp Convention Center. |    Bert(X<sub>2</sub>) = 
+
 [True<sub>X2</sub>, False<sub>X2</sub>]  |
 |X<sub>3</sub>| The marketing seminar is being `holding` from August 8th through the 11th at Rupp Convention Center. |    Bert(X<sub>3</sub>) = [True<sub>X3</sub>, False<sub>X3</sub>]  |
 |X<sub>4</sub>| The marketing seminar is being `hold` from August 8th through the 11th at Rupp Convention Center. |    Bert(X<sub>4</sub>) = [True<sub>X4</sub>, False<sub>X4</sub>]  |
