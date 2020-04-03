@@ -66,7 +66,7 @@ Question : The marketing seminar is being [ ? ] from August 8th through the 11th
     d) hold
 ``` 
 
-| Sentence(X)     | Output(Y~1~) |
+| Sentence(X)     | Output(Y) |
 | :-------------: |  :--------------: |
 | The marketing seminar is being `held` from August 8th through the 11th at Rupp Convention Center. |  True(1)  |
 | The marketing seminar is being `holds` from August 8th through the 11th at Rupp Convention Center. |    False(0)  |
