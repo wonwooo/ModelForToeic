@@ -76,7 +76,7 @@ Question : The marketing seminar is being [ ? ] from August 8th through the 11th
 We got 20744 training samples from 5186 questions and tried to train(finetune) BertForSequenceClassification model.
 
 
-## 3. Solving Part5 problems with finedtuned bert_grammer model
+## 3. Solving Part5 problems with finedtuned BERT model
 
 To solve Part5 questions with the finetuned Classifier model, we should input each full sentence that blank is filled blank with 4 candidates in question. Our input sentence X and model's output is shown below.
 
