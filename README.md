@@ -78,6 +78,7 @@ We got 20744 training samples from 5186 questions and tried to train(finetune) B
 
 ## 3. Solving Part5 problems with finedtuned bert_grammer model
 
+To solve Part5 questions with the finetuned Classifier model, we changed the question as below.
 
 |  | Input(X)     | Output(Y) |
 | :-------------: | :-------------: |  :--------------: |
@@ -86,6 +87,6 @@ We got 20744 training samples from 5186 questions and tried to train(finetune) B
 |X<sub>3</sub>| The marketing seminar is being `holding` from August 8th through the 11th at Rupp Convention Center. |    BertForSeqClassification(X<sub>3</sub>) = logit<sub>True</sub>(X<sub>3</sub>) , logit<sub>False</sub>(X<sub>3</sub>)] |
 |X<sub>4</sub>| The marketing seminar is being `hold` from August 8th through the 11th at Rupp Convention Center. |    BertForSeqClassification(X<sub>4</sub>) = logit<sub>True</sub>(X<sub>4</sub>) , logit<sub>False</sub>(X<sub>4</sub>)] |
 
-If the above Input X is input to the Finetuned BERTForSequenceClassification model, the model outputs the logit about the true and false of sentence X respectively. Finally, we predict candidates with the highest logit<sub>True</sub> as correct answer .
+If the above X is tokenized and input to the Finetuned BERTForSequenceClassification model, the model outputs the logit about the true and false of sentence X respectively. Finally, we predict candidates with the highest logit<sub>True</sub> as correct answer .
 
 <p align="center"><img width="500" src="https://github.com/woopal/ModelForToeic/blob/master/eq1.PNG"/></p>
