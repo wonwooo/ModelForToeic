@@ -35,7 +35,7 @@ We first measured the performance of the pretrained BERT using the transformer p
   '3': 'worst',
   '4': 'worsen'},
 
- '2 : {'question': 'He told us that some fans lined up outside of the box office to _ a ticket for the concert.',
+ '2' : {'question': 'He told us that some fans lined up outside of the box office to _ a ticket for the concert.',
   'answer': 'purchase',
   '1': 'achieve',
   '2': 'purchase',
