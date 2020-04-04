@@ -5,7 +5,7 @@
 This project started by referring to the project of [graykode](<https://github.com/graykode/toeicbert>) who solved TOEIC Part 5(Sentence with blank problem) with pytorch-pretrained-BERT model(Not finetuned).
 This project was done to increase the correct answer rate for the TOEIC Part5 problems by finetuning pretrained-BERT.
 
-We collected a total of 6100 Part5 problems, and used 85% (5185) and 15% (915) questions for training and testing.
+We collected 6100 Toeic Part5 questions, and used 85% (5185) and 15% (915) questions for training and testing.
 You can see whole process in this project [here](<https://github.com/wonwooo/ModelForToeic/blob/master/Toeic_Bert.ipynb>).
 
 
