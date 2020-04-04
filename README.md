@@ -1,8 +1,10 @@
-### Only Pre-trained BERT : 83.8% 
-### After Finetuning BERT With grammer problems : 87.8%
 
-This project started by referring to the results of ~.
-This project was done to increase the correct answer rate for the TOEIC Part 5 blank question.
+### Only Pre-trained BERTForMaskedLM : 83.8% 
+### After Finetuning BERT With grammer : 87.8%
+
+This project started by referring to the project of [graykode](<https://github.com/graykode/toeicbert>) who solved TOEIC Part 5(Sentence with blank problem) with pytorch-pretrained-BERT model(Not finetuned).
+This project was done to increase the correct answer rate for the TOEIC Part5 problems by finetuning pretrained-BERT.
+
 We collected a total of 6100 Part5 problems, and used 85% (5185) and 15% (915) questions for training and testing.
 The TOEIC Part 5 problem types we used are:
 #### Type 1 : Grammer
@@ -16,7 +18,7 @@ Question : The marketing seminar is being [ ? ] from August 8th through the 11th
 
 #### Type 2 : Vocabulary
 ```
-Question : The appointment will bring a great deal of [ ? ].
+Question : THe appointment will bring a great deal of [ ? ].
     a) prestige
     b) testimony
     c) willpower
@@ -26,6 +28,7 @@ Question : The appointment will bring a great deal of [ ? ].
 ## 1. Prerained BERT For Masked Language Model
 
 We first measured the performance of the pretrained BERT using the transformer package provided by Huggingface. Here is an example of the problem we used for Test.
+
 ```
 {
     '1' :{'question': 'His allergy symptoms _ with the arrival of summer.',
@@ -43,7 +46,10 @@ We first measured the performance of the pretrained BERT using the transformer p
   '4': 'support'}
 }
 ```
-As a result of the test, Pretrined BertForMaskedLM already showed a correct answer rate of 83.8%, and we tried Finetuning with 5185 training sets, but it was no different from Bert's original pretraining task, so there was no improvement in the correct answer rate for the TOEIC problem. The dataset we created for Finetuning the MaskedLM model is as follows.
+To solve this blank problems with huggingface's [pytorch-pretrained-BERT model](<https://github.com/huggingface/pytorch-pretrained-BERT>), the method suggested by  [graykode](<https://github.com/graykode/toeicbert>) was borrowed.
+
+As a result of the test, Pretrined BertForMaskedLM already showed a correct answer rate of 83.8%.
+We tried to finetune Pretrined BertForMaskedLM with 5185 training sets. But it was no different from Bert's original pretraining task, so there was no improvement in the correct answer rate for the test problem. The dataset we created to Finetune the MaskedLM model is as follows.
 
 | Sentence(X)     | Output(Y) |
 | :-------------: |  :--------------: |
@@ -53,7 +59,7 @@ As a result of the test, Pretrined BertForMaskedLM already showed a correct answ
 
 ## 2. Grammar learning specialized for TOEIC Part5.
 
-Therefore, we devised a method to increase the correct answer rate by learning the features of the grammatical part, the first type of Toeic part5.
+Therefore, we devised a method to increase the correct answer rate by learning the features of the grammatical part, the first type of TOEIC Part5.
 First, a model with a linear layer for binary classification was used on the pre-trained Bert.(BertForSequenceClassification)
 
 To finetune the linear classification model, we created four trainig data in one of the following problems.
