@@ -1,6 +1,6 @@
 
-### Only Pre-trained BERTForMaskedLM : 83.8% 
-### After Finetuning BERT through the proposed method : 87.8%
+### Corret Answer Rate with Only Pre-trained BERTForMaskedLM : 83.8% 
+### After finetuning BERT through the proposed method : 87.8%
 
 This project started by referring to the project of [graykode](<https://github.com/graykode/toeicbert>) who solved TOEIC Part 5(Sentence with blank problem) with pytorch-pretrained-BERT model(Not finetuned).
 This project was done to increase the correct answer rate for the TOEIC Part5 problems by finetuning pretrained-BERT.
