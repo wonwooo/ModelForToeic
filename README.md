@@ -1,12 +1,17 @@
 
 ### Only Pre-trained BERTForMaskedLM : 83.8% 
-### After Finetuning BERT With grammer : 87.8%
+### After Finetuning BERT through the proposed method : 87.8%
 
 This project started by referring to the project of [graykode](<https://github.com/graykode/toeicbert>) who solved TOEIC Part 5(Sentence with blank problem) with pytorch-pretrained-BERT model(Not finetuned).
 This project was done to increase the correct answer rate for the TOEIC Part5 problems by finetuning pretrained-BERT.
 
 We collected a total of 6100 Part5 problems, and used 85% (5185) and 15% (915) questions for training and testing.
-The TOEIC Part 5 problem types we used are:
+You can see whole process in this project [here](<https://github.com/wonwooo/ModelForToeic/blob/master/Toeic_Bert.ipynb>).
+
+
+## TOEIC Part 5 : Blank sentence problems
+
+There are two types in  TOEIC Part 5 as below:
 #### Type 1 : Grammer
 ```
 Question : The marketing seminar is being [ ? ] from August 8th through the 11th at Rupp Convention Center.
@@ -24,6 +29,7 @@ Question : THe appointment will bring a great deal of [ ? ].
     c) willpower
     d) virtuosity    
 ```
+We have to choose best one of the four candidates given in the problem. 
 
 ## 1. Prerained BERT For Masked Language Model
 
