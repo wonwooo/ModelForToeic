@@ -31,7 +31,7 @@ Question : THe appointment will bring a great deal of [ ? ].
 ```
 We have to choose best one of the four candidates given in the problem. 
 
-## 1. Prerained BERT For Masked Language Model
+## 1. Pretrained BERT For Masked Language Model
 
 We first measured the performance of the pretrained BERT using the transformer package provided by Huggingface. Here is an example of the problem we used for Test.
 
@@ -63,7 +63,7 @@ We tried to finetune Pretrined BertForMaskedLM with 5185 training sets. But it w
 | The appointment will bring a great deal of [ ? ] |    prestige (Correct answer)   |
 
 
-## 2. Grammar learning specialized for TOEIC Part5.
+## 2. Learning grammatical part specialized for TOEIC Part5.
 
 Therefore, we devised a method to increase the correct answer rate by learning the features of the grammatical part by slightly changing the task.
 First, a model with a linear layer for binary classification on the pre-trained Bert was used.(huggingface's [BertForSequenceClassification](<https://huggingface.co/transformers/model_doc/bert.html#bertforsequenceclassification>))
