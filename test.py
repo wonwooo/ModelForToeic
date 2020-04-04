@@ -53,12 +53,10 @@ if __name__ == '__main__':
         bert_grammer.load_state_dict(torch.load('checkpoint.pt'))
         bert_grammer.cuda()
         bert_grammer.eval()
-
-        cnt_bert_mixed = 0
         cnt_bert_base = 0
-        cnt_bert_tuned = 0
+        cnt_bert_grammer = 0
 
-        i = 1  # 문제번호
+
         for i, pset in enumerate(testset):
 
             grammer_score = []
@@ -81,24 +79,27 @@ if __name__ == '__main__':
                 grammer_score.append(get_logit(bert_grammer, input_ids_grammer, segment_ids_grammer))
 
             softmax = torch.nn.Softmax(dim=0)
-            total_score = softmax(torch.tensor(lm_score)) + softmax(torch.tensor(grammer_score))
-            # print(lm_score, grammer_score, total_score)
             pred_tunedModel = np.argmax(grammer_score) + 1
             pred_baseModel = torch.argmax(softmax(torch.tensor(lm_score))).item() + 1
 
-            if any([len(pset[str(j)].strip().split()) >= 2 for j in range(1, 5)]):
-                pred_mixedModel = np.argmax(grammer_score) + 1
-            else:
-                pred_mixedModel = torch.argmax(total_score).item() + 1
-
             if pset[str(pred_tunedModel)].lower() == ans:
-                cnt_bert_tuned += 1
-            if pset[str(pred_mixedModel)].lower() == ans:
-                cnt_bert_mixed += 1
+                cnt_bert_grammer += 1
             if pset[str(pred_baseModel)].lower() == ans:
                 cnt_bert_base += 1
-        print('=============================Precision==============================')
-        print('Pretrained LMmodel : {}, Finetuned Bert_grammer : {}, Mixed(LM + Bert_grammer)  Model : {}'.format(
-            cnt_bert_base / len(testset), cnt_bert_tuned / len(testset), cnt_bert_mixed / len(testset)))
+            if 0 <= i < 20:
+                if i == 0:
+                    print(
+                        '==================================================Predictions Example==================================================')
+                    print('{0:15s} {1:<30s} {2:<30s} {3:<30s}'.format('', 'Correct answer', 'Pretrained BertForMaskedLM', 'Finetuned BertForSeqClf'))
+
+                print('{0:15s} {1:<30s} {2:<30s} {3:<30s}'.format('Question' + str(i + 1), ans, pset[str(pred_baseModel)].lower(),
+                                                                  pset[str(pred_tunedModel)].lower()))
+            if i == 20:
+                print('.\n.\n.')
+        print(
+            '=================================================Test finished=================================================\n')
+        print('Pretrained BertForMaskedLM : {}\nFinetuned BertForSequenceClassification(Bert_grammer) : {}'.format(
+            cnt_bert_base / len(testset), cnt_bert_grammer / len(testset)))
+
     else:
         print('Testing finished')

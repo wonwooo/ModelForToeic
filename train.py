@@ -94,7 +94,7 @@ if __name__ == "__main__":
     total_steps = len(input_ids_loader) * epochs
     bert_grammer = BertForSequenceClassification.from_pretrained('bert-base-uncased')
     bert_grammer.cuda()
-    optimizer = AdamW(bert_grammer.parameters(), lr=2e-5, eps=1e-8)
+    optimizer = AdamW(bert_grammer.parameters(), lr=1e-5, eps=1e-8)
 
     # create the learning rate scheduler
     scheduler = get_linear_schedule_with_warmup(optimizer,
