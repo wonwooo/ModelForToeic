@@ -66,9 +66,9 @@ We tried to finetune Pretrined BertForMaskedLM with 5185 training sets. But it w
 ## 2. Grammar learning specialized for TOEIC Part5.
 
 Therefore, we devised a method to increase the correct answer rate by learning the features of the grammatical part by slightly changing the task.
-First, a model with a linear layer for binary classification was used on the pre-trained Bert.(huggingface's [BertForSequenceClassification](<https://huggingface.co/transformers/model_doc/bert.html#bertforsequenceclassification>))
+First, a model with a linear layer for binary classification on the pre-trained Bert was used.(huggingface's [BertForSequenceClassification](<https://huggingface.co/transformers/model_doc/bert.html#bertforsequenceclassification>))
 
-To finetune the linear classification model, we created four trainig data in one of the following problems.
+To finetune the linear classification model, we created four trainig data from one problems like below.
 
 ```
 Question : The marketing seminar is being [ ? ] from August 8th through the 11th at Rupp Convention Center.
