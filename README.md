@@ -55,7 +55,7 @@ We first measured the performance of the pretrained BERT using the transformer p
 To solve this blank problems with huggingface's [pytorch-pretrained-BERT model](<https://github.com/huggingface/pytorch-pretrained-BERT>), the method suggested by  [graykode](<https://github.com/graykode/toeicbert>) was borrowed.
 
 As a result of the test, Pretrined BertForMaskedLM already showed a correct answer rate of 83.8%.
-We tried to finetune Pretrined BertForMaskedLM with 5185 training sets. But it was no different from Bert's original pretraining task, so there was no improvement in the correct answer rate for the test problem. The dataset we created to Finetune the MaskedLM model is as follows.
+We tried to finetune Pretrained BertForMaskedLM with 5185 training sets. But it was no different from Bert's original pretraining task, so there was no improvement in the correct answer rate for the test problem. The dataset we created to Finetune the MaskedLM model is as follows.
 
 | Sentence(X)     | Output(Y) |
 | :-------------: |  :--------------: |
